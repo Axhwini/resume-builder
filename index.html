@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- LEFT SIDE FORM -->
+    <div class="form-section">
+
+        <h2 class="form-title">Resume Builder</h2>
+
+        <!-- Name -->
+        <div class="form-box">
+            <label>Name</label>
+            <input type="text" id="nameInput" placeholder="Enter your name" onkeyup="updateResume()">
+        </div>
+
+        <!-- Email -->
+        <div class="form-box">
+            <label>Email</label>
+            <input type="email" id="emailInput" placeholder="Enter your email" onkeyup="updateResume()">
+        </div>
+
+        <!-- Phone -->
+        <div class="form-box">
+            <label>Phone</label>
+            <input type="text" id="phoneInput" placeholder="Enter phone number" onkeyup="updateResume()">
+        </div>
+
+        <!-- EDUCATION MULTI -->
+        <div class="form-box">
+            <label>Education</label>
+            <div id="eduList">
+                <textarea class="eduField" rows="2" placeholder="Enter education" onkeyup="updateResume()"></textarea>
+            </div>
+            <button onclick="addEdu()" class="add-btn">+ Add More</button>
+        </div>
+
+        <!-- SKILLS MULTI -->
+        <div class="form-box">
+            <label>Skills</label>
+            <div id="skillsList">
+                <input type="text" class="skillField" placeholder="Enter a skill" onkeyup="updateResume()">
+            </div>
+            <button onclick="addSkill()" class="add-btn">+ Add More</button>
+        </div>
+
+        <!-- EXPERIENCE MULTI -->
+        <div class="form-box">
+            <label>Experience</label>
+            <div id="expList">
+                <textarea class="expField" rows="2" placeholder="Enter experience" onkeyup="updateResume()"></textarea>
+            </div>
+            <button onclick="addExp()" class="add-btn">+ Add More</button>
+        </div>
+
+        <!-- PROJECTS MULTI -->
+        <div class="form-box">
+            <label>Projects</label>
+
+            <div id="projectList">
+                <input type="text" class="projectTitle" placeholder="Project Title" onkeyup="updateResume()">
+                <textarea class="projectDesc" rows="2" placeholder="Project Description" onkeyup="updateResume()"></textarea>
+                <hr>
+            </div>
+
+            <button onclick="addProject()" class="add-btn">+ Add More</button>
+        </div>
+
+        <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+
+    </div>
+
+    <!-- RIGHT SIDE PREVIEW -->
+    <div class="resume-section" id="resume">
+
+        <div class="header">
+            <h1 id="namePreview">Your Name</h1>
+            <p id="emailPreview">Email: example@mail.com</p>
+            <p id="phonePreview">Phone: 0000000000</p>
+        </div>
+
+        <hr/>
+
+        <div class="block">
+            <h3>Education</h3>
+            <ul id="eduPreview"></ul>
+        </div>
+
+        <div class="block">
+            <h3>Skills</h3>
+            <ul id="skillsPreview"></ul>
+        </div>
+
+        <div class="block">
+            <h3>Experience</h3>
+            <ul id="expPreview"></ul>
+        </div>
+
+        <div class="block">
+            <h3>Projects</h3>
+            <ul id="projectPreview"></ul>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+</body>
+</html>
+
